@@ -36,3 +36,4 @@ print(NewZnach)
 # small
 Znach = input('Введите значения')
 print(''.join(str(int(i) ** 2) for i in Znach))
+dsadsasda
