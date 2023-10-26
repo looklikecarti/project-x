@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18c3bc91-3515-400f-803b-8990bc60baf6" name="Changes" comment="dz dlya myjika">
-      <change afterPath="$PROJECT_DIR$/dzlh 5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dzlh 6.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dop_zadanie.py" beforeDir="false" afterPath="$PROJECT_DIR$/dop_zadanie.py" afterDir="false" />
     </list>
@@ -54,7 +54,7 @@
       <recent name="E:\githab projects" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.dzlh 5">
+  <component name="RunManager" selected="Python.dop_zadanie">
     <configuration name="dop_zadanie" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject4" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -184,8 +184,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.dzlh 5" />
         <item itemvalue="Python.dop_zadanie" />
+        <item itemvalue="Python.dzlh 5" />
         <item itemvalue="Python.dzlh 4" />
         <item itemvalue="Python.dzlh3" />
         <item itemvalue="Python.dzlh3 (1)" />

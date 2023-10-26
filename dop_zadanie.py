@@ -44,5 +44,28 @@ def word_converter(word):
 print(word_converter(str(input('Введите строку:'))))
 
 
-#!!!!!!!!!!!!!!!!!!!посмотрите мой гитхаб и поставьте баллы, пожалуйста!!!!!!!!!!!!!!!!!!!!!!!!!
-# https://github.com/looklikecarti
+#(дополнительное задание номер 5)
+def is_wristband(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0]) if rows > 0 else 0
+    if rows == 0 or cols == 0:
+        return False
+    for i in range(rows):
+        if matrix[i] != matrix[0]:
+            return False
+    for j in range(cols):
+        if [matrix[i][j] for i in range(rows)] != matrix[0]:
+            return False
+    for i in range(1, rows):
+        for j in range(1, cols):
+            if matrix[i][j] != matrix[i - 1][j - 1]:
+                return False
+    for i in range(1, rows):
+        for j in range(cols - 1):
+            if matrix[i][j] != matrix[i - 1][j + 1]:
+                return False
+    return True
+print(is_wristband([["A", "A"], ["B", "B"], ["C", "C"]]))
+print(is_wristband([["A", "B"], ["A", "B"], ["A", "B"]]))
+print(is_wristband([["A", "B", "C"], ["C", "A", "B"], ["B", "C", "A"], ["A", "B", "C"]]))
+print(is_wristband([["A", "B", "C"], ["B", "C", "A"], ["C", "A", "B"], ["A", "B", "A"]]))
