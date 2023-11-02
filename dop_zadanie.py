@@ -44,6 +44,27 @@ def word_converter(word):
 print(word_converter(str(input('Введите строку:'))))
 
 
+#(дополнительное задание номер 4)
+#There's no such thing as private properties on a coffeescript object! But, maybe there are? Implement a function createSecretHolder(secret) which accepts any value as secret and returns an object with ONLY two methods getSecret() which returns the secret setSecret() which sets the secret obj = createSecretHolder(5) obj.getSecret() # returns 5 obj.setSecret(2) obj.getSecret() # returns 2
+def createSecretHolder(secret):
+    secret_value = secret
+    def getSecret():
+        return secret_value
+
+    def setSecret(new_secret):
+        nonlocal secret_value  # Используем nonlocal для изменения внешней переменной
+        secret_value = new_secret
+    return {
+        'getSecret': getSecret,
+        'setSecret': setSecret
+    }
+# Пример использования:
+obj = createSecretHolder(5)
+print(obj['getSecret']())
+obj['setSecret'](2)
+print(obj['getSecret']())
+
+
 #(дополнительное задание номер 5)
 def is_wristband(matrix):
     rows = len(matrix)
@@ -69,3 +90,32 @@ print(is_wristband([["A", "A"], ["B", "B"], ["C", "C"]]))
 print(is_wristband([["A", "B"], ["A", "B"], ["A", "B"]]))
 print(is_wristband([["A", "B", "C"], ["C", "A", "B"], ["B", "C", "A"], ["A", "B", "C"]]))
 print(is_wristband([["A", "B", "C"], ["B", "C", "A"], ["C", "A", "B"], ["A", "B", "A"]]))
+
+
+#(дополнительное задание № 6)
+# Krazy King BlackJack is just like blackjack, with one difference: the kings! Instead of the kings being simply worth 10 points, kings are worth either 10 points or some other number of points announced by the dealer at the start of the game. Whichever value yields the best hand is the one that plays (much like how aces are worth either 1 or 11 points).
+# Write a function that inputs a list of strings (representing a blackjack hand) and an integer that represents the alternative king value. The function should output an integer representing the value of the hand if it is less than or equal to 21, and False if it exceeds 21. Other than the alternative king value, normal blackjack rules apply.
+# The cards, in order ace-through king, are represented as strings as follows:
+# ['A', '2', '3','4', '5', '6','7', '8', '9','10', 'J', 'Q','K']
+# A hand has between 2 and 20 cards, inclusive. The alternative king value is between 2 and 9, inclusive.
+# Blackjack rules: the value of a hand is determined by maximizing the value of the sum of its cards while not exceeding 21 if possible. Number cards are worth their value, Jacks ('J') and Queens ('Q') are worth 10, Aces are worth either 1 or 11, and kings, again, are worth either 10 or their alternative value.
+def krazy_king_blackjack(hand, king_value):
+    card_values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': king_value}
+    total = 0
+    num_aces = hand.count('A')
+    for card in hand:
+        total += card_values[card]
+    while num_aces > 0 and total + 10 <= 21:
+        total += 10
+        num_aces -= 1
+    if total > 21:
+        return False
+    return total
+# Пример использования:
+hand = ['A', 'K', '5', '4']
+king_value = 9
+result = krazy_king_blackjack(hand, king_value)
+if result is False:
+    print("Перебор!")
+else:
+    print("Значение руки:", result)
