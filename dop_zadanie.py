@@ -119,3 +119,16 @@ if result is False:
     print("Перебор!")
 else:
     print("Значение руки:", result)
+
+
+#(дополнительное задание № 7)
+# We have an array of unique elements. A special kind of permutation is the one that has all of its elements in a different position than the original. Let's see how many of these permutations may be generated from an array of four elements. We put the original array with square brackets and the wanted permutations with parentheses. arr = [1, 2, 3, 4]
+from math import factorial
+def count_special_permutations(l):
+    if l < 2:
+        return 0
+    result = factorial(l) * sum((-1) ** k / factorial(k) for k in range(l + 1))
+    return int(result)
+arr_length = 4
+result = count_special_permutations(arr_length)
+print(result)

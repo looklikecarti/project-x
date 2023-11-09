@@ -1,4 +1,4 @@
-#1 Напишите функцию read_last(lines, file), которая будет открывать определенный файл file и выводить на печать построчно последние строки в количестве lines (на всякий случай проверим, что задано положительное целое число). Протестируем функцию на файле article.txt со следующим содержимым:
+'''#1 Напишите функцию read_last(lines, file), которая будет открывать определенный файл file и выводить на печать построчно последние строки в количестве lines (на всякий случай проверим, что задано положительное целое число). Протестируем функцию на файле article.txt со следующим содержимым:
 def read_last(lines, file):
     if not isinstance(lines, int) or lines <= 0:
         print("Количество строк должно быть положительным целым числом.")
@@ -11,19 +11,18 @@ def read_last(lines, file):
                 print(line.strip())
     except FileNotFoundError:
         print(f"Файл '{file}' не найден.")
-read_last(6, "article.txt")
+read_last(6, "article.txt")'''
 
 
 #2 Выберите любую папку на своем компьютере, имеющую вложенные директории. Выведите на печать в терминал ее содержимое, как и всех подкаталогов при помощи функции print_docs(directory).
 import os
-
 def print_docs(directory):
     for root, dirs, files in os.walk(directory):
         print(f"Папка: {root}")
         for file in files:
             print(f"Файл: {os.path.join(root, file)}")
-print_docs("C:")
-#3 Документ article.txt содержит следующий текст:
+print_docs("D:")
+'''#3 Документ article.txt содержит следующий текст:
 #Требуется реализовать функцию longest_words(file), которая выводит слово, имеющее максимальную длину (или список слов, если таковых несколько).
 def longest_words(file):
     try:
@@ -104,4 +103,4 @@ def circles_generator(num_of_circles=100):
         # Сохраняем изображение как файл с именем, содержащим номер
         image.save(f'circles/circle_{i+1}.jpg')
         print(f"Создан файл 'circle_{i+1}.jpg'")
-circles_generator()
+circles_generator()'''
