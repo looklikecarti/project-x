@@ -21,8 +21,6 @@ print(word_count)
 
 #3
 import re
-
-
 def replace_time_with_tbd(text):
     time_pattern = re.compile(r'\b\d{2}:\d{2}(:\d{2})?\b')
     result = time_pattern.sub('(TBD)', text)
@@ -32,8 +30,8 @@ output_text = replace_time_with_tbd(input_text)
 print(output_text)
 
 
-#4import re
-
+#4
+import re
 def extract_abbreviations(text):
     abbreviation_pattern = re.compile(r'\b[A-Z]{2,}\b')
     abbreviations = abbreviation_pattern.findall(text)

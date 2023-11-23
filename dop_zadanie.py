@@ -1,4 +1,4 @@
-#(дополнительное задание номер 1)
+'''#(дополнительное задание номер 1)
 # Написать программу, которая будет делить введенные пользователем два вещественных числа и выводить результат на экран, сообщая об ошибке в случае деления на ноль.
 number1 = float(input("Введите первое число: "))
 number2 = float(input("Введите второе число: "))
@@ -131,4 +131,29 @@ def count_special_permutations(l):
     return int(result)
 arr_length = 4
 result = count_special_permutations(arr_length)
-print(result)
+print(result)'''
+
+
+#(дополнительное задание № 8)
+# A bouncy number is a positive integer whose digits neither increase nor decrease. For example, 1235 is an increasing number, 5321 is a decreasing number, and 2351 is a bouncy number. By definition, all numbers under 100 are non-bouncy, and 101 is the first bouncy number.
+# Determining if a number is bouncy is easy, but counting all bouncy numbers with N digits can be challenging for large values of N. To complete this kata, you must write a function that takes a number N and return the count of bouncy numbers with N digits. For example, a "4 digit" number includes zero-padded, smaller numbers, such as 0001, 0002, up to 9999.
+# For clarification, the bouncy numbers between 100 and 125 are: 101, 102, 103, 104, 105, 106, 107, 108, 109, 120, and 121.
+def count_bouncy_numbers(N):
+    def is_bouncy(num):
+        num_str = str(num)
+        increasing = decreasing = True
+        for i in range(1, len(num_str)):
+            if num_str[i] > num_str[i - 1]:
+                decreasing = False
+            if num_str[i] < num_str[i - 1]:
+                increasing = False
+        return not (increasing or decreasing)
+    count = 0
+    for num in range(101, 10 ** N):
+        if is_bouncy(num):
+            count += 1
+    return count
+# Пример:
+N = 4
+result = count_bouncy_numbers(N)
+print(f'Количество чисел "bouncy" с {N} знаками: {result}')
