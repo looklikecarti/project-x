@@ -156,4 +156,4 @@ def count_bouncy_numbers(N):
 # Пример:
 N = 4
 result = count_bouncy_numbers(N)
-print(f'Количество чисел "bouncy" с {N} знаками: {result}')'''
+print(f'Количество чисел "bouncy" с {N} знаками: {result}')'''''
