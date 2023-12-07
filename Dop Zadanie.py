@@ -131,7 +131,7 @@ def count_special_permutations(l):
     return int(result)
 arr_length = 4
 result = count_special_permutations(arr_length)
-print(result)'''
+print(result)
 
 
 #(дополнительное задание № 8)
@@ -156,4 +156,4 @@ def count_bouncy_numbers(N):
 # Пример:
 N = 4
 result = count_bouncy_numbers(N)
-print(f'Количество чисел "bouncy" с {N} знаками: {result}')
+print(f'Количество чисел "bouncy" с {N} знаками: {result}')'''
